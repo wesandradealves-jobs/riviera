@@ -1,5 +1,5 @@
 function mobileNavigation(){
-    $(".tcon").toggleClass("tcon-transform");
+    $(".tcon").toggleClass("tcon-transform")
     if($(".tcon").is(".tcon-transform")){
         $(".navigation.-mobile").addClass("-active");
     } else {
@@ -23,6 +23,15 @@ $(document).ready(function () {
         loop:false,
         margin:0,
         navText:["<i class='owl-prev-arrow'><img src='assets/imgs/arrow.png' /></i>","<i class='owl-next-arrow'><img src='assets/imgs/arrow.png' /></i>"]
+    });
+    $('.owl-carousel.owl-items-carousel').owlCarousel({
+        // center:false,
+        // items:1,
+        // dots:false,
+        // nav:true,
+        // loop:false,
+        // margin:0,
+        // navText:["<i class='owl-prev-arrow'><img src='assets/imgs/arrow.png' /></i>","<i class='owl-next-arrow'><img src='assets/imgs/arrow.png' /></i>"]
     });
     $(window).scroll(function(event){
         closeMenu()

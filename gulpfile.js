@@ -116,6 +116,18 @@ gulp.task('js-dist', function() {
         .pipe(gulp.dest('dist/assets/js/'));
 });
 
+// Copy favico to dist
+gulp.task('favico', function() {
+    return gulp.src(['./.ico','./favico.*'])
+        .pipe(imagemin({
+            plugins: [
+                imageminJpegtran(),
+                imageminPngquant({quality: '65-80'})
+            ]          
+        }))    
+        .pipe(development(gulp.dest('dist')));
+});
+
 // Copy htaccess gzip compressor to dist
 gulp.task('htaccess', function() {
     return gulp.src('./.htaccess')
@@ -124,10 +136,11 @@ gulp.task('htaccess', function() {
 
 // Copy and minify images to dist
 gulp.task('images', function(){
-    return gulp.src(['assets/imgs/**/*.*'])
+    return gulp.src(['assets/imgs/**/*.png','assets/imgs/**/*.jpg','assets/imgs/**/*.gif'])
       .pipe(imagemin({
         plugins: [
             imageminJpegtran(),
+            imageminGifsicle(),
             imageminPngquant({quality: '65-80'})
         ]          
       }))
@@ -180,7 +193,7 @@ gulp.task('clean:build', function () {
 // Build task
 gulp.task('build', function (callback) {
     console.log('Building project...')
-    runSequence('clean:build', ['html', 'css-dist', 'images', 'fonts', 'htaccess', 'js-dist', 'create-file'],
+    runSequence('clean:build', ['html', 'css-dist', 'images', 'favico', 'fonts', 'htaccess', 'js-dist', 'create-file'],
         callback
     );
 });
