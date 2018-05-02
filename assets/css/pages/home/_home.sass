@@ -1,0 +1,54 @@
+.o-que-fazemos
+    .grid
+        align-items: stretch 
+        @extend .flex
+        flex-flow: row wrap
+        margin: 40px -15px 0 
+        justify-content: space-around
+        >* 
+            flex: 1
+            +mq(940px, max)
+                flex: 0 0 auto 
+                width: 50%
+                @for $i from 1 through 2
+                    &:nth-child(4n+#{$i})
+                        margin-bottom: 30px
+            +mq(414px, max)
+                width: 100%
+                &:nth-child(3)
+                    margin-bottom: 30px
+            padding: 0 15px
+            >*
+                background-color: white 
+                align-items: center 
+                border-radius: 7px
+                @extend .flex 
+                flex-flow: column wrap 
+                height: 100%
+                justify-content: space-between 
+                +shadow(0,0,12px,4px, $lightgray)
+                padding: 4px
+                text-align: center
+                >*
+                    margin-bottom: 8px
+                .grid-thumbnail
+                    background-position: center center 
+                    background-repeat: no-repeat
+                    background-size: cover
+                    display: block
+                    flex: 0 0 auto  
+                    padding: 0 0 72%
+                    width: 100%
+                .grid-title
+                    +rem((font-size : 19px, 'line-height' : 22px))
+                    font-family: 'Roboto Slab', serif
+                    flex: 0 0 auto 
+                    width: 100%                
+                p 
+                    +rem((font-size : 16px, 'line-height' : 19px))
+                    flex: 1 
+                    width: 100%
+                .btn 
+                    flex: 0 0 auto
+                    margin: 0 auto 8px
+                    width: 125px

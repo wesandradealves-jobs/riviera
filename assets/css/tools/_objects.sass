@@ -29,15 +29,54 @@ input
 
 .container
     display: block
-    max-width: 1200px
+    max-width: 1060px
     margin: 0 auto
     padding-left: 15px
     padding-right: 15px
 
 #wrap
+    align-items: flex-start
+    @extend .flex
+    flex-flow: column wrap 
+    justify-content: space-between
+    min-height: 100vh
     overflow: hidden
 
-.logo 
-    img,svg
-        height: auto
-        max-width: 100%
+.main
+    flex: 1
+    width: 100%
+    z-index: 1
+
+section
+    display: block
+    &:nth-child(even)
+        background-color: $lightgray
+    .container
+        padding-bottom: 40px
+        .section-title
+            display: block 
+            font-weight: 100
+            padding: 25px 0
+            text-align: center
+            +rem('font-size', 40px)
+            font-weight: 300 
+
+.btn,
+p
+    color: $warm-grey
+    font-weight: 100
+    +rem((font-size : 18px, 'line-height' : 22px))
+    font-family: 'Roboto Slab', serif
+    text-align: center
+
+.btn
+    border-radius: 5px
+    +rem('font-size', 14px)
+    &.-btn-1
+        border: 1px $warm-grey solid 
+        +rem('line-height', 32px)
+        transform: perspective(1px) translateZ(0)
+        transition-duration: 0.5s
+        &:hover
+            transform: scale(1.2);
+            transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36)          

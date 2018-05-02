@@ -58,3 +58,10 @@
 
     @media only screen and (#{$type}-width: $width)
       @content
+
+=mqh($height, $type: min)
+    @if $type == max
+      $height: $height
+
+    @media only screen and (#{$type}-height: $height)
+      @content

@@ -1,0 +1,28 @@
+.banner
+    animation: banner 1000ms forwards
+    background-size: cover 
+    background-attachment: fixed
+    background-position: center top 
+    background-repeat: no-repeat
+    opacity: 0
+    height: 100vh
+    .container
+        align-items: center
+        @extend .flex
+        flex-flow: column wrap 
+        height: inherit 
+        justify-content: center 
+        padding-top: 90px
+        .banner-logo
+            +mqh(414px,max)
+                height: 100%
+                img,svg 
+                    height: 100%
+                    width: auto
+            img,svg 
+                animation: banner-logo 1000ms forwards
+                animation-delay: 200ms
+                max-width: 100%
+                position: relative
+                opacity: 0
+                top: 10px

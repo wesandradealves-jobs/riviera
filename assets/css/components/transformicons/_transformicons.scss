@@ -3,7 +3,7 @@ $tcon-transition: .3s !default;
 $tcon-jstransform: 'tcon-transform' !default;
 
 $tcon-menu-radius: ($tcon-size / 14) !default;
-$tcon-menu-color: white;
+$tcon-menu-color: $ice;
 $tcon-menu-arrowleft-transformation: (
   transform: scale3d(.8, .8, .8) rotate3d(0, 0, 1, 90deg)
 ) !default;
@@ -41,7 +41,7 @@ $tcon-menu-arrow360left-transformation: (
 
 @mixin tcon-menu-lines {
   display: inline-block;
-  height: ($tcon-size / 7);
+  height: ($tcon-size / 14);
   width: $tcon-size;
   border-radius: $tcon-menu-radius;
   transition: $tcon-transition;

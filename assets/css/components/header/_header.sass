@@ -1,0 +1,62 @@
+.header
+    animation: header 1000ms forwards
+    background-color: white
+    flex: 0 0 auto
+    height: 50px
+    +shadow(0,0,60px,-10px,black)
+    left: 0
+    position: absolute 
+    top: -80px
+    width: 100%
+    z-index: 2
+    .container
+        align-items: flex-start 
+        @extend .flex
+        flex-flow: row wrap 
+        justify-content: space-between
+        .logo
+            flex: 0 0 auto
+            &-content
+                animation: logo 1000ms forwards,
+                logo-size 1000ms forwards 
+                animation-delay: 700ms, 1000ms
+                background-position: center 45px
+                background-repeat: no-repeat
+                background-size: auto 77px
+                display: block 
+                opacity: 0
+                text-align: center
+                top: 7px
+                height: 42px
+                width: 124px
+                img,svg
+                    display: inline-block 
+                    height: auto
+                    width: 100%                
+        .navigation
+            flex: 1
+            padding-left: 70px
+            >ul 
+                align-items: center
+                @extend .flex
+                flex-flow: row wrap 
+                justify-content: space-between
+                +mq(940px, max)
+                    justify-content: flex-end
+                >li 
+                    +rem(('line-height' : 50px, 'font-size' : 14px))
+                    font-weight: 100
+                    padding: 0 8px
+                    +mq(1048px, max)
+                        +rem(('font-size' : 12px))
+                    &:not(:last-child)
+                        +mq(940px, max)
+                            display: none
+                    &:first-child
+                        padding-left: 0
+                    &:last-child
+                        display: none
+                        padding-right: 0
+                        +mq(940px, max)
+                            display: inline-block
+                            padding: 5px 0
