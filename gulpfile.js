@@ -124,7 +124,7 @@ gulp.task('htaccess', function() {
 
 // Copy and minify images to dist
 gulp.task('images', function(){
-    return gulp.src(['assets/imgs/**/*.png', 'assets/imgs/**/*.jpg'])
+    return gulp.src(['assets/imgs/**/*.*'])
       .pipe(imagemin({
         plugins: [
             imageminJpegtran(),
