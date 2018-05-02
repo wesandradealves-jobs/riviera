@@ -104,7 +104,7 @@ gulp.task('commons', function(){
 
 // Vendors .js generator
 gulp.task('vendors', function() {
-  return gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery-mousewheel/jquery.mousewheel.js'])
+  return gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/owl.carousel/dist/owl.carousel.js'])
     .pipe(uglify())
     .pipe(concat('vendors.js'))
     .pipe(gulp.dest('assets/js'));
