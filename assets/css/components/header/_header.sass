@@ -1,5 +1,6 @@
 .header
-    animation: header 1000ms forwards
+    &:not(.-sticky)
+        animation: header 1000ms forwards
     background-color: white
     flex: 0 0 auto
     height: 50px
@@ -9,6 +10,15 @@
     top: -80px
     width: 100%
     z-index: 2
+    &.-sticky
+        left: 0
+        position: fixed 
+        top: -300px
+        +transition(500ms)
+        z-index: 10
+        width: 100%
+        &.-stuck
+            top: 0
     .container
         align-items: flex-start 
         @extend .flex
