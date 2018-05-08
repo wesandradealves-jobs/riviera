@@ -178,7 +178,8 @@ gulp.task('fonts', function() {
 // Browsersync + SASS + js generators and cleaner
 gulp.task('serve', ['scripts', 'sass', 'commons', 'vendors'], function() {
     browserSync.init({
-        server: './'
+        server: './',
+        browser: 'chrome'
     });
     gulp.watch(sassfiles, ['sass']);
     gulp.watch(['**/*.html','assets/**/*.js','!assets/js/commons.js','!assets/js/vendors.js']).on('change', browserSync.reload);
