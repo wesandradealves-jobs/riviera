@@ -49,6 +49,10 @@ input
 
 section
     display: block
+    opacity: 0
+    +transition(500ms)
+    &.-animated
+        opacity: 1
     &:nth-child(even)
         background-color: $lightgray
     .container
