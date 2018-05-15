@@ -2,14 +2,14 @@
     &.-mobile
         background-color: transparentize($sun-yellow, .1)
         display: none
-        height: 100%
+        height: calc(100vh - 50px)
         left: 0
         position: fixed 
-        top: 0
+        top: 50px
         width: 100%
         &.-active
             display: block
-            z-index: 15
+            z-index: 2
         >ul 
             align-items: center
             @extend .flex
@@ -17,17 +17,56 @@
             justify-content: center
             text-align: center
             height: inherit 
-            >li 
+            li
                 &:not(:last-child)
                     border-bottom: 1px transparentize(black, .9) solid
+            >li 
                 color: $greyish-brown        
                 +rem('font-size', 14px)
                 padding: 15px
                 width: 100%
                 +mqh(414px, max)
-                    padding: 10px 15px
+                    +rem('font-size', 12px)
+                    padding: 5px 15px
+                >a 
+                    display: block 
+                    width: 100%
+                    .fa-angle-down
+                        display: block
+                        position: absolute 
+                        right: 0
+                        top: 0
+                        +rem('font-size', 22px)
+                &.-opened
+                    >ul 
+                        @extend .flex
+                        flex-flow: column wrap
+                    .fa-angle-down
+                        transform: rotate(180deg)
+                        transform-origin: center center
+                >ul
+                    display: none
+                    margin: 15px -16px 0
+                    +mqh(414px, max)
+                        margin-top: 5px
+                    >li 
+                        display: block
+                        padding: 0
+                        &:first-child
+                            border-top: 1px transparentize(black, .9) solid
+                        &:not(:last-child)
+                            padding-top: 15px
+                            padding-bottom: 15px
+                            +mqh(414px, max)
+                                padding-top: 5px
+                                padding-bottom: 5px
+                        &:last-child
+                            margin-top: 15px
+                            +mqh(414px, max)
+                                margin-top: 5px
                 &:hover
-                    color: black
+                    >a 
+                        color: black
 
     >ul 
         width: 100%
@@ -35,7 +74,7 @@
             color: black 
             +rem(('font-size' : 16px))
             font-weight: 300
-            &.-active,
-            &:hover
-                color: $sun-yellow
-                font-weight: 700
+            >a
+                &.-active,
+                &:hover
+                    color: $sun-yellow
