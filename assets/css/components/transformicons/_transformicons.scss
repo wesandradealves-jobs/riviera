@@ -70,14 +70,14 @@ $tcon-menu-arrow360left-transformation: (
     top: -($tcon-size / 4);
   }
 
-  .#{$tcon-jstransform} & {
+  .tcon-transform & {
     transform: scale3d(.8, .8, .8);
   }
 }
-.tcon-menu--xcross {
+.tcon {
   width: auto;
 
-  &.#{$tcon-jstransform} {
+  &.tcon-transform {
     .tcon-menu__lines {
       background: transparent;
 

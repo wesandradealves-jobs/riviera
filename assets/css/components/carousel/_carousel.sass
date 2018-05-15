@@ -3,6 +3,8 @@
     .owl-carousel
         &.owl-item-carousel
             padding: 0 90px
+            +mq(737px, max)
+                padding: 0
             .owl-stage
                 align-items: center
                 @extend .flex
@@ -17,6 +19,8 @@
             .owl-nav
                 align-items: center
                 @extend .flex
+                &.disabled
+                    display: none
                 flex-flow: row wrap 
                 justify-content: space-between
                 left: 0

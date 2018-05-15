@@ -9,6 +9,7 @@ function mobileNavigation(){
 
 function closeMenu(){
     $(".navigation.-mobile").removeClass("-active");
+    $(".navigation.-mobile .-opened").removeClass("-opened");
     if($(".tcon").is(".tcon-transform")){
         $(".tcon").removeClass("tcon-transform")
     }
@@ -16,7 +17,7 @@ function closeMenu(){
 
 $(document).ready(function () {
     $('.owl-carousel.owl-gallery').owlCarousel({
-        center:true,
+        center:false,
         items:1,
         dots:false,
         nav:true,
@@ -25,21 +26,14 @@ $(document).ready(function () {
         navText:["<i class='owl-prev-arrow'><img src='assets/imgs/arrow.png' /></i>","<i class='owl-next-arrow'><img src='assets/imgs/arrow.png' /></i>"]
     });
     $('.owl-carousel.owl-item-carousel').owlCarousel({
+        autoplay:true,
+        autoplayTimeout:6000,        
         loop:true,
         margin:10,
-        nav:true,
+        nav:false,
         dots:false,
         navText:["<i class='owl-prev-arrow'><img src='assets/imgs/arrow.png' /></i>","<i class='owl-next-arrow'><img src='assets/imgs/arrow.png' /></i>"],
         responsive:{
-            0:{
-                items:1
-            },
-            568:{
-                items:2
-            },
-            737:{
-                items:3
-            },
             768:{
                 items:4
             }
@@ -48,6 +42,15 @@ $(document).ready(function () {
     $(window).scroll(function(event){
         closeMenu()
     });
+    $(window).resize(function() {
+        closeMenu();
+    });    
+    $( ".navigation > ul > li" ).each(function() {
+        if($(this).find("ul").length){
+            $(this).addClass("has-submenu"),
+            $(this).children("a").append("<i class='fas fa-angle-down'></i>")
+        }
+    });    
 });
       
       
