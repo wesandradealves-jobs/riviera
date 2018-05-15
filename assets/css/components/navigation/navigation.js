@@ -9,9 +9,13 @@ $(document).ready(function () {
             if($(id).length == 0){
                 window.location = "./"+id;
             } else {
-                setTimeout(function(){
-                    $("html, body").animate({scrollTop: goTo.top - $("header").outerHeight()}, 500); 
-                });            
+                if(!$(this).parent().is(".has-submenu")){
+                    setTimeout(function(){
+                        $("html, body").animate({scrollTop: goTo.top - $("header").outerHeight()}, 500); 
+                    });            
+                } else {
+                    $(this).parent().toggleClass("-opened")
+                }
             }
     }); 
     $(window).scroll(function(event){
