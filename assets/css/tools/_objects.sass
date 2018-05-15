@@ -29,7 +29,7 @@ input
 
 .container
     display: block
-    max-width: 1060px
+    max-width: 1170px
     margin: 0 auto
     padding-left: 15px
     padding-right: 15px
@@ -60,12 +60,15 @@ section
 
 .section-title
     display: block 
+    font-family: 'Roboto', sans-serif
     font-weight: 100
     padding: 25px 0
     text-align: center
     +rem('font-size', 40px)
-    font-weight: 300 
-
+    &+p 
+        display: block
+        max-width: 945px
+        margin: 0 auto 
 .btn,
 p
     color: $warm-grey
