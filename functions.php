@@ -106,7 +106,7 @@ echo $value;
 function menu() {
     register_nav_menus(
     array(
-    // 'default' => __( 'Default' ),
+    // 'mobile' => __( 'Mobile' ),
     // 'copyright' => __( 'Copyright' )
     )
     );
@@ -259,29 +259,29 @@ if (isset($_GET['activated']) && is_admin()){
 	update_option( 'show_on_front', 'page' );
 }
 ////////////////////////////////////////////////////
-$menuname = 'Navigation';
+// $menuname = 'Navigation';
 // $bpmenulocation = 'lblgbpmenu';
 // Does the menu exist already?
-$menu_exists = wp_get_nav_menu_object( $menuname );
+// $menu_exists = wp_get_nav_menu_object( $menuname );
 
-// If it doesn't exist, let's create it.
-if( !$menu_exists){
-    $menu_id = wp_create_nav_menu($menuname);
+// // If it doesn't exist, let's create it.
+// if( !$menu_exists){
+//     $menu_id = wp_create_nav_menu($menuname);
 
-    // Set up default BuddyPress links and add them to the menu.
-    wp_update_nav_menu_item($menu_id, 0, array(
-        'menu-item-title' =>  __('Home'),
-        'menu-item-classes' => 'home',
-        'menu-item-url' => home_url( '/' ), 
-        'menu-item-status' => 'publish'));
+//     // Set up default BuddyPress links and add them to the menu.
+//     wp_update_nav_menu_item($menu_id, 0, array(
+//         'menu-item-title' =>  __('Home'),
+//         'menu-item-classes' => 'home',
+//         'menu-item-url' => home_url( '/' ), 
+//         'menu-item-status' => 'publish'));
 
-    // Grab the theme locations and assign our newly-created menu
-    if( !has_nav_menu( $bpmenulocation ) ){
-        $locations = get_theme_mod('nav_menu_locations');
-        $locations[$bpmenulocation] = $menu_id;
-        set_theme_mod( 'nav_menu_locations', $locations );
-    }
-}
+//     // Grab the theme locations and assign our newly-created menu
+//     if( !has_nav_menu( $bpmenulocation ) ){
+//         $locations = get_theme_mod('nav_menu_locations');
+//         $locations[$bpmenulocation] = $menu_id;
+//         set_theme_mod( 'nav_menu_locations', $locations );
+//     }
+// }
 ////////////////////////////////////////////////////
 if( function_exists('acf_add_options_page') ) {
  
@@ -473,6 +473,7 @@ function cpt() {
         'show_ui' => true,
         'query_var' => true,
         'rewrite' => true,
+        'show_in_nav_menus' => true,
         'capability_type' => 'post',
         'hierarchical' => false,
         'menu_position' => 8,
