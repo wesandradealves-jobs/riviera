@@ -100,7 +100,7 @@
             </span>
             <span>
               <small>
-                <?php echo get_sub_field('depoente'); ?><br/>
+                <b><?php echo get_sub_field('depoente'); ?></b><br/>
                 <?php echo get_sub_field('empresa_depoente'); ?>             
               </small>
             </span>
