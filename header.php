@@ -18,6 +18,17 @@
     <?php wp_meta(); ?>
     <link rel="canonical" href="<?php echo site_url(); ?>" />
     <?php wp_head(); ?>
+    <!-- Hotjar Tracking Code for http://www.rivieracocktails.com.br -->
+      <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:883384,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>    
   </head>
   <body   
   <?php
@@ -38,42 +49,12 @@
     }
     ?>>  
     <div id="wrap">
-      <!-- <nav class="navigation -mobile">
-        <ul>
-            <li><a href="javascript:void(0)" title="Home">Home</a></li>
-            <li><a href="javascript:void(0)" title="Quem somos">Quem somos</a></li>
-            <li><a href="javascript:void(0)" title="O Que fazemos">O Que fazemos</a></li>
-            <li><a href="javascript:void(0)" title="Galeria de Fotos">Galeria de Fotos</a></li>
-            <li><a href="javascript:void(0)" title="Depoimentos">Depoimentos</a></li>
-            <li><a href="javascript:void(0)" title="Nossos drinks">Nossos drinks</a></li>
-            <li><a href="javascript:void(0)" title="Nossos clientes">Nossos clientes</a></li>
-            <li><a href="javascript:void(0)" title="Entre em contato">Entre em contato</a></li>
-          </ul>  
-      </nav> -->
-      <?php wp_nav_menu( array( 'menu' => 'Navigation', 'container' => 'nav', 'container_class'=>'navigation -mobile' ) ); ?>
+      <?php wp_nav_menu( array( 'menu' => 'Mobile Navigation', 'container' => 'nav', 'container_class'=>'navigation -mobile' ) ); ?>
       <header class="header">
         <div class="container">
           <h1 class="logo">
             <?php get_template_part('components/logo/_logo') ?>
           </h1>
-          <!-- <nav class="navigation">
-            <ul>
-              <li><a href="javascript:void(0)" title="Home">Home</a></li>
-              <li><a href="javascript:void(0)" title="Quem somos">Quem somos</a></li>
-              <li><a href="javascript:void(0)" title="O Que fazemos">O Que fazemos</a></li>
-              <li><a href="javascript:void(0)" title="Galeria de Fotos">Galeria de Fotos</a></li>
-              <li><a href="javascript:void(0)" title="Depoimentos">Depoimentos</a></li>
-              <li><a href="javascript:void(0)" title="Nossos drinks">Nossos drinks</a></li>
-              <li><a href="javascript:void(0)" title="Nossos clientes">Nossos clientes</a></li>
-              <li><a href="javascript:void(0)" title="Entre em contato">Entre em contato</a></li>
-              <li>
-                  <button onclick="mobileNavigation()" type="button" class="tcon tcon-menu--xcross" aria-label="toggle menu">
-                      <span class="tcon-menu__lines" aria-hidden="true"></span>
-                      <span class="tcon-visuallyhidden">toggle menu</span>
-                  </button>  
-              </li>  
-            </ul>
-          </nav> -->
           <?php wp_nav_menu( array( 'menu' => 'navigation', 'container' => 'nav', 'container_class'=>'navigation' ) ); ?>
         </div>
       </header>

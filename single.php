@@ -4,7 +4,7 @@
 <section class="about">
   <div class="container">
     <h2 class="section-title"><?php echo get_the_title(); ?></h2>
-    <?php the_excerpt(); ?>
+    <?php the_content(); ?>
   </div>
 </section>
 <?php if( have_rows('galeria') ): ?>

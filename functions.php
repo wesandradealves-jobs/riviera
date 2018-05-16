@@ -477,32 +477,32 @@ function cpt() {
         'capability_type' => 'post',
         'hierarchical' => false,
         'menu_position' => 8,
-        'supports' => array('title', 'thumbnail', 'excerpt')
+        'supports' => array('title', 'thumbnail', 'editor', 'excerpt')
     ); 
 
-    $labelsServicosTax = array(
-        'name'              => _x( 'Categorias', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Categoria', 'taxonomy singular name' ),
-        'search_items'      => __( 'Buscar Categorias' ),
-        'all_items'         => __( 'Todas as Categorias' ),
-        'parent_item'       => __( 'Categoria Pai' ),
-        'parent_item_colon' => __( 'Categoria Pai:' ),
-        'edit_item'         => __( 'Editar categoria' ),
-        'update_item'       => __( 'Atualizar categoria' ),
-        'add_new_item'      => __( 'Adicionar nova categoria' ),
-        'new_item_name'     => __( 'Novo nome' ),
-        'menu_name'         => __( 'Categorias' ),
-    );
-    $argsServicosTax = array(
-        'hierarchical'      => true, // Set this to 'false' for non-hierarchical taxonomy (like tags)
-        'labels'            => $labelsServicosTax,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'categories' ),
-    );
+    // $labelsServicosTax = array(
+    //     'name'              => _x( 'Categorias', 'taxonomy general name' ),
+    //     'singular_name'     => _x( 'Categoria', 'taxonomy singular name' ),
+    //     'search_items'      => __( 'Buscar Categorias' ),
+    //     'all_items'         => __( 'Todas as Categorias' ),
+    //     'parent_item'       => __( 'Categoria Pai' ),
+    //     'parent_item_colon' => __( 'Categoria Pai:' ),
+    //     'edit_item'         => __( 'Editar categoria' ),
+    //     'update_item'       => __( 'Atualizar categoria' ),
+    //     'add_new_item'      => __( 'Adicionar nova categoria' ),
+    //     'new_item_name'     => __( 'Novo nome' ),
+    //     'menu_name'         => __( 'Categorias' ),
+    // );
+    // $argsServicosTax = array(
+    //     'hierarchical'      => true, // Set this to 'false' for non-hierarchical taxonomy (like tags)
+    //     'labels'            => $labelsServicosTax,
+    //     'show_ui'           => true,
+    //     'show_admin_column' => true,
+    //     'query_var'         => true,
+    //     'rewrite'           => array( 'slug' => 'categories' ),
+    // );
     register_post_type('servicos', $argsServicos);
-    register_taxonomy( 'servicos_categories', array( 'servicos' ), $argsServicosTax );
+    // register_taxonomy( 'servicos_categories', array( 'servicos' ), $argsServicosTax );
 }
 ////////////////////////////////////////////////////
 attach_template_to_page( 'home', 'page-templates/home.php' );
