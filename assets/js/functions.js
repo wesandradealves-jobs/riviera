@@ -21,7 +21,7 @@ $(document).ready(function () {
         items:1,
         dots:false,
         nav:true,
-        loop:true,
+        loop:false,
         margin:0,
         navText:["<i class='owl-prev-arrow'><img src='assets/imgs/arrow.png' /></i>","<i class='owl-next-arrow'><img src='assets/imgs/arrow.png' /></i>"]
     });
