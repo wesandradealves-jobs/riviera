@@ -53,10 +53,21 @@ section
     +transition(500ms)
     &.-animated
         opacity: 1
+    &:nth-child(odd)
+        background: white
+        background: -moz-linear-gradient(top, $lightgray 0%, white 5%)
+        background: -webkit-linear-gradient(top, $lightgray 0%,white 5%)
+        background: linear-gradient(to bottom, $lightgray 0%,white 5%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$lightgray, endColorstr=white,GradientType=0 )        
     &:nth-child(even)
-        background-color: $lightgray
+        background: $lightgray
+        background: -moz-linear-gradient(top, darken($lightgray, 10%) 0%, $lightgray 5%)
+        background: -webkit-linear-gradient(top, darken($lightgray, 10%) 0%,$lightgray 5%)
+        background: linear-gradient(to bottom, darken($lightgray, 10%) 0%,$lightgray 5%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=darken($lightgray, 10%), endColorstr=$lightgray,GradientType=0 )
     .container
         padding-bottom: 40px
+        z-index: 2
 
 .section-title
     display: block 
@@ -73,7 +84,7 @@ section
 p
     color: $warm-grey
     font-weight: 100
-    +rem((font-size : 18px, 'line-height' : 22px))
+    +rem((font-size : 16px, 'line-height' : 20px))
     font-family: 'Roboto Slab', serif
     text-align: center
 
