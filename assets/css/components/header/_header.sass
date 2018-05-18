@@ -42,28 +42,30 @@
                     width: 100%                
         .navigation
             flex: 1
-            padding-left: 70px
+            padding-left: 70px  
+            +mq(768px, max)
+                padding-left: 15px
             >ul 
                 align-items: center
                 @extend .flex
                 flex-flow: row wrap 
                 justify-content: space-between
-                +mq(940px, max)
+                +mq(767px, max)
                     justify-content: flex-end
                 >li 
                     +rem(('line-height' : 50px, 'font-size' : 14px))
                     font-weight: 100
                     padding: 0 8px
-                    +mq(1048px, max)
-                        +rem(('font-size' : 12px))
+                    +mq(768px, max)
+                        +rem(('font-size' : 10px))
                     &:not(:last-child)
-                        +mq(940px, max)
+                        +mq(767px, max)
                             display: none
                     &:first-child
                         padding-left: 0
                     &:last-child
                         display: none
                         padding-right: 0
-                        +mq(940px, max)
+                        +mq(767px, max)
                             display: inline-block
                             padding: 5px 0

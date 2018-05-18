@@ -56,16 +56,16 @@ section
     &:nth-child(odd)
         &:not([style])
             background: white
-            background: -moz-linear-gradient(top, $lightgray 0%, white 5%)
-            background: -webkit-linear-gradient(top, $lightgray 0%,white 5%)
-            background: linear-gradient(to bottom, $lightgray 0%,white 5%)
+            background: -moz-linear-gradient(top, $lightgray, white 4%)
+            background: -webkit-linear-gradient(top, $lightgray, white 4%)
+            background: linear-gradient(to bottom, $lightgray, white 4%)
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$lightgray, endColorstr=white,GradientType=0 )        
     &:nth-child(even)
         &:not([style])
             background: $lightgray
-            background: -moz-linear-gradient(top, darken($lightgray, 10%) 0%, $lightgray 5%)
-            background: -webkit-linear-gradient(top, darken($lightgray, 10%) 0%,$lightgray 5%)
-            background: linear-gradient(to bottom, darken($lightgray, 10%) 0%,$lightgray 5%)
+            background: -moz-linear-gradient(top, darken($lightgray, 10%), $lightgray 2%)
+            background: -webkit-linear-gradient(top, darken($lightgray, 10%),$lightgray 2%)
+            background: linear-gradient(to bottom, darken($lightgray, 10%),$lightgray 2%)
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=darken($lightgray, 10%), endColorstr=$lightgray,GradientType=0 )
     .container
         padding-bottom: 40px
@@ -84,9 +84,9 @@ section
         margin: 0 auto 
 .btn,
 p
-    color: $warm-grey
-    font-weight: 100
-    +rem((font-size : 16px, 'line-height' : 20px))
+    color: black
+    font-weight: 300
+    +rem((font-size : 18px, 'line-height' : 20px))
     font-family: 'Roboto Slab', serif
     text-align: center
 

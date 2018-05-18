@@ -27,7 +27,7 @@ $(document).ready(function () {
     });
     $('.owl-carousel.owl-item-carousel').owlCarousel({
         autoplay:true,
-        autoplayTimeout:6000,        
+        autoplayTimeout:3000,        
         loop:true,
         margin:10,
         nav:false,

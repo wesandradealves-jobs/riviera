@@ -9,7 +9,15 @@
                 align-items: center
                 @extend .flex
                 flex-flow: row wrap
+                &:hover
+                    .owl-item
+                        filter: blur(3px)
+                        opacity: .5
                 .owl-item
+                    +transition(500ms)
+                    &:hover
+                        filter: blur(0px) 
+                        opacity: 1
                     img
                         display: block 
                         height: auto

@@ -1,6 +1,10 @@
 .navigation
     &.-mobile
-        background-color: transparentize($sun-yellow, .1)
+        background: gray
+        background: -moz-linear-gradient(top, transparentize($lightgray, .2), transparentize($sun-yellow, .1) 8%)
+        background: -webkit-linear-gradient(top, transparentize($lightgray, .2),transparentize($sun-yellow, .1) 8%)
+        background: linear-gradient(to bottom, transparentize($lightgray, .2),transparentize($sun-yellow, .1) 8%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=gray, endColorstr=transparentize($sun-yellow, .1),GradientType=0 )        
         display: none
         height: calc(100vh - 50px)
         left: 0
@@ -14,19 +18,21 @@
             align-items: center
             @extend .flex
             flex-flow: column wrap
-            justify-content: center
+            justify-content: flex-start
+            padding-top: 30px
             text-align: center
             height: inherit 
             li
                 &:not(:last-child)
-                    border-bottom: 1px transparentize(black, .9) solid
+                    border-bottom: 1px white solid
             >li 
                 color: $greyish-brown        
-                +rem('font-size', 14px)
-                padding: 15px
+                +rem('font-size', 22px)
+                padding: 10px 15px
+                text-align: left
                 width: 100%
                 +mqh(414px, max)
-                    +rem('font-size', 12px)
+                    +rem('font-size', 16px)
                     padding: 5px 15px
                 >a 
                     display: block 
@@ -35,7 +41,9 @@
                         display: block
                         position: absolute 
                         right: 0
-                        top: 0
+                        top: 5px
+                        +mqh(414px, max)
+                            top: 0
                         +rem('font-size', 22px)
                 &.-opened
                     >ul 
@@ -45,25 +53,26 @@
                         transform: rotate(180deg)
                         transform-origin: center center
                 >ul
+                    background-color: transparentize(black, .9)
                     display: none
-                    margin: 15px -16px 0
+                    margin: 15px -16px -10px
                     +mqh(414px, max)
                         margin-top: 5px
+                        margin-bottom: -5px
                     >li 
                         display: block
-                        padding: 0
+                        padding: 0 15px
+                        margin-top: 15px
+                        +mqh(414px, max)
+                            margin-top: 5px
                         &:first-child
                             border-top: 1px transparentize(black, .9) solid
                         &:not(:last-child)
-                            padding-top: 15px
-                            padding-bottom: 15px
-                            +mqh(414px, max)
-                                padding-top: 5px
-                                padding-bottom: 5px
+                            border: 0
                         &:last-child
-                            margin-top: 15px
+                            margin-bottom: 15px
                             +mqh(414px, max)
-                                margin-top: 5px
+                                margin-bottom: 5px
                 &:hover
                     >a 
                         color: black
