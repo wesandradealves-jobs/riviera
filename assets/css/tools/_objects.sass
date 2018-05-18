@@ -56,10 +56,10 @@ section
     &:nth-child(odd)
         &:not([style])
             background: white
-            background: -moz-linear-gradient(top, $lightgray, white 4%)
-            background: -webkit-linear-gradient(top, $lightgray, white 4%)
-            background: linear-gradient(to bottom, $lightgray, white 4%)
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$lightgray, endColorstr=white,GradientType=0 )        
+            background: -moz-linear-gradient(top, lighten(gray, 38%), white 3%)
+            background: -webkit-linear-gradient(top, lighten(gray, 38%), white 3%)
+            background: linear-gradient(to bottom, lighten(gray, 38%), white 3%)
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=lighten(gray, 38%), endColorstr=white,GradientType=0 )        
     &:nth-child(even)
         &:not([style])
             background: $lightgray
