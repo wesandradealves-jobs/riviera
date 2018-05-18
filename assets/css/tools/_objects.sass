@@ -63,10 +63,10 @@ section
     &:nth-child(even)
         &:not([style])
             background: $lightgray
-            background: -moz-linear-gradient(top, darken($lightgray, 10%), red 2%)
-            background: -webkit-linear-gradient(top, darken($lightgray, 10%),red 2%)
-            background: linear-gradient(to bottom, darken($lightgray, 10%),red 2%)
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=darken($lightgray, 10%), endColorstr=red,GradientType=0 )
+            background: -moz-linear-gradient(top, darken($lightgray, 10%), lighten(gray, 38%) 2%)
+            background: -webkit-linear-gradient(top, darken($lightgray, 10%),lighten(gray, 38%) 2%)
+            background: linear-gradient(to bottom, darken($lightgray, 10%),lighten(gray, 38%) 2%)
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=darken($lightgray, 10%), endColorstr=lighten(gray, 38%),GradientType=0 )
     .container
         padding-bottom: 40px
         z-index: 2
